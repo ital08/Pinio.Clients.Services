@@ -1,8 +1,10 @@
 package com.pinio.services.Models.Entity;
 
+
 import lombok.Data;
 
 @Data
+
 public class ImagesCatalog {
 //    CREATE TABLE public.imagescatalog (
 //            idimagescatalog varchar(9) NOT NULL,
