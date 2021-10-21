@@ -1,5 +1,10 @@
 package com.pinio.services.Models.Entity;
 
+
+import lombok.Data;
+
+@Data
+
 public class ImagesCatalog {
 //    CREATE TABLE public.imagescatalog (
 //            idimagescatalog varchar(9) NOT NULL,
@@ -10,5 +15,6 @@ public class ImagesCatalog {
 //);
     private Integer idImagesCatalog;
     private String idProductCatalog;
-    private String url;
+    private String urlimage;
+    private Integer position;
 }
