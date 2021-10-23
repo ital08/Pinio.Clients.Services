@@ -1,0 +1,14 @@
+com\pinio\services\rest\Controllers\ProductsController.class
+com\pinio\services\Models\Entity\SearchProductCatalog.class
+com\pinio\services\rest\v1\Example.class
+com\pinio\services\Service\ProductsCatalogService.class
+com\pinio\services\Models\Entity\ProductCatalog.class
+com\pinio\services\Models\Entity\Products.class
+com\pinio\services\rest\Controllers\WebConfig.class
+com\pinio\services\Service\ProductsCatalogServiceImpl.class
+com\pinio\services\Models\Dao\ProductCatalogDaoImpl.class
+com\pinio\services\rest\Controllers\WebConfig$1.class
+com\pinio\services\Models\Dao\ProductCatalogDao.class
+com\pinio\services\Application.class
+com\pinio\services\Info.class
+com\pinio\services\Models\Entity\ImagesCatalog.class

@@ -19,7 +19,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
-@CrossOrigin(origins = "*",methods = {RequestMethod.POST})
+@CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
 @RequestMapping("/products")
 public class ProductsController {
     @Autowired
