@@ -1,8 +1,11 @@
 package com.pinio.services.rest.Controllers;
 
+import com.pinio.services.Models.Entity.LoginUser;
 import com.pinio.services.Models.Entity.ProductCatalog;
 import com.pinio.services.Models.Entity.SearchProductCatalog;
+import com.pinio.services.Models.Entity.User;
 import com.pinio.services.Service.ProductsCatalogService;
+import com.pinio.services.Service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 
 import io.swagger.v3.oas.annotations.media.Content;
@@ -21,15 +24,16 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
 @RequestMapping("/products")
-public class ProductsController {
+public class UserController {
     @Autowired
-    private ProductsCatalogService service;
+    private UserService service;
     @RequestMapping(
-            value = "/productcatalog",
+            value = "/user",
             produces = "application/json;charset=utf-8",
             method = RequestMethod.GET
     )
-    public @ResponseBody SearchProductCatalog getProductCatalog (@RequestBody ProductCatalog productocatalog){
-        return service.getProductCatalog(productocatalog);
+    public @ResponseBody
+    User login (@RequestBody LoginUser loginuser){
+        return service.login(loginuser);
     }
 }
