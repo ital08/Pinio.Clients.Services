@@ -24,27 +24,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 public class ProductsController {
     @Autowired
     private ProductsCatalogService service;
-    @GetMapping
-    @Operation(summary = "Get status of application")
-    @ApiResponses(
-            value = {
-                    @ApiResponse(
-                            responseCode = "200",
-                            description = "Confirmation message that application is running",
-                            content = @Content(mediaType = "text/plain"))
-            }
-    )
-    @RequestMapping(
-            value = "/status",
-            produces = "application/json;charset=utf-8",
-            method = RequestMethod.GET
-    )
-    public @ResponseBody ResponseEntity<String> example() {
-        List<String> list = new ArrayList<>();
-        //return a simple list of strings
-        list.add("Congratulations, your application is up and running");
-        return new ResponseEntity<String>(list.toString(), HttpStatus.OK);
-    }
     @RequestMapping(
             value = "/productcatalog",
             produces = "application/json;charset=utf-8",
