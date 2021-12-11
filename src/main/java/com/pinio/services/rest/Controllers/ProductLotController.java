@@ -1,23 +1,22 @@
 package com.pinio.services.rest.Controllers;
 
-import com.pinio.services.Models.Entity.ProductOrder;
-import com.pinio.services.Service.ProductOrderService;
+import com.pinio.services.Models.Entity.ProductLot;
+import com.pinio.services.Service.ProductLotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
-public class ProductOrderController {
+public class ProductLotController {
     @Autowired
-    private ProductOrderService service;
+    private ProductLotService service;
     @RequestMapping(
-            value= "/addproductorder",
+            value= "/addproductlot",
             produces = "application/json;charset=utf-8",
             method = RequestMethod.POST
     )
     public @ResponseBody
-    ProductOrder addProductOrder (@RequestBody ProductOrder productorder){
-        return service.addProductOrder(productorder);
+    ProductLot addProductLot (@RequestBody ProductLot productLot){
+        return service.addProductLot(productLot);
     }
-
 }

@@ -12,9 +12,9 @@ public class NewProductDaoImpl implements NewProductDao {
     private JdbcTemplate jdbcTemplate;
     public ProductCatalog addNewProduct(ProductCatalog productcatalog) {
         String SQL = "INSERT into productcatalog \n" +
-                "   (idproductcatalog, idsubcategory, productbrand, productmodel, productdescription,\n" +
-                "   provider, unitprice, unitsxlot, shippingcost)\n" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?);\n";
+                "   (idproductcatalog, idsubcategory, productbrand, productmodel, productdescription, \n" +
+                "   provider, unitprice, unitsxlot, shippingcost) \n" +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?); \n";
         try{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);

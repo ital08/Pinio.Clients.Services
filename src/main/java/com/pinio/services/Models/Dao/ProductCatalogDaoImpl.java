@@ -17,13 +17,13 @@ public class ProductCatalogDaoImpl implements ProductCatalogDao{
         SearchProductCatalog r = new SearchProductCatalog();
         r.setListProductCatalog(new ArrayList<ProductCatalog>());
         String SQL = "SELECT p.idproductcatalog AS idproductcatalog, \n" +
-                "                p.productbrand AS productbrand,\n" +
-                "                p.productmodel AS productmodel,\n" +
-                "                p.unitprice AS unitprice,\n" +
-                "                u.urlimage AS urlimage\n" +
-                "                FROM productcatalog as p\n" +
-                "                INNER JOIN imagescatalog as u on u.idproductcatalog = p.idproductcatalog\n" +
-                "                WHERE (upper(p.productmodel) like ?) AND  ( upper(p.productbrand) like ?) AND (upper(p.idproductcatalog) like ?);";
+                "                p.productbrand AS productbrand, \n" +
+                "                p.productmodel AS productmodel, \n" +
+                "                p.unitprice AS unitprice, \n" +
+                "                u.urlimage AS urlimage \n" +
+                "                FROM productcatalog as p \n" +
+                "                INNER JOIN imagescatalog as u on u.idproductcatalog = p.idproductcatalog \n" +
+                "                WHERE (upper(p.productmodel) like ?) AND  ( upper(p.productbrand) like ?) AND (upper(p.idproductcatalog) like ?); ";
         try {
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
