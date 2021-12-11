@@ -20,8 +20,13 @@ public class ProductCatalog {
 //    PRIMARY KEY (idproductcatalog)
 //);
     private String idProductCatalog;
+    private Integer idsubcategory;
     private String productBrand;
     private String productModel;
+    private String productdescription;
+    private String provider;
     private Float unitprice;
+    private Integer unitsxlot;
+    private Float shippingcost;
     private String urlimage;
 }
