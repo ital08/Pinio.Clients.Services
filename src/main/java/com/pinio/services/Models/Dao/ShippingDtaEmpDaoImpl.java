@@ -1,7 +1,5 @@
 package com.pinio.services.Models.Dao;
 
-import com.pinio.services.Models.Entity.ProductCatalog;
-import com.pinio.services.Models.Entity.SearchProductCatalog;
 import com.pinio.services.Models.Entity.SearchShippingDtaEmp;
 import com.pinio.services.Models.Entity.ShippingDtaEmp;
 import org.springframework.beans.factory.annotation.Autowired;

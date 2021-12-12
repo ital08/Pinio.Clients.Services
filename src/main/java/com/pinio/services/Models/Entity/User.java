@@ -14,11 +14,15 @@ public class User {
 //    email varchar(50) NOT NULL,
 //    clientregistrydate TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 //    PRIMARY KEY (idclient)
-//);
+//);nameDistrict, P.nameprovincia, F.nameDepartment
     private String idclient;
     private String DNI;
+    private String Clientname;
+    private String ClientLastname;
     private String clientname;
     private String clientemail;
     private String clientpassword;
-
+    private String nameDistrict;
+    private String nameprovincia;
+    private String nameDepartment;
 }

@@ -1,6 +1,5 @@
 package com.pinio.services.Models.Dao;
 
-import com.pinio.services.Models.Entity.ProductCatalog;
 import com.pinio.services.Models.Entity.ProductOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

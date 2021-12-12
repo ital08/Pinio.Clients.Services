@@ -18,7 +18,7 @@ public class ShippingDtaEmpController {
             method = RequestMethod.GET
     )
     public @ResponseBody
-    SearchShippingDtaEmp SearchShippingDtaEmp (){
+    SearchShippingDtaEmp getShippingDtaEmp(){
         return service.getShippingDtaEmp();
     }
 
@@ -28,7 +28,7 @@ public class ShippingDtaEmpController {
             method = RequestMethod.POST
     )
     public @ResponseBody
-    ShippingDtaEmp chageShippingState (ShippingDtaEmp shippingDtaEmp){
+    ShippingDtaEmp chageShippingState (@RequestBody ShippingDtaEmp shippingDtaEmp){
         return service.chageShippingState(shippingDtaEmp);
     }
 }

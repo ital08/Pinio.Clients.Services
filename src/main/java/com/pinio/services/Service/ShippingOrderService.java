@@ -1,8 +1,6 @@
 package com.pinio.services.Service;
 
-import com.pinio.services.Models.Entity.ProductCatalog;
 import com.pinio.services.Models.Entity.SearchProductCatalog;
-import com.pinio.services.Models.Entity.SearchShippingDtaEmp;
 import com.pinio.services.Models.Entity.ShippingDtaEmp;
 
 public interface ShippingOrderService {
