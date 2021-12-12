@@ -29,4 +29,6 @@ public class ProductCatalog {
     private Integer unitsxlot;
     private Float shippingcost;
     private String urlimage;
+    private Integer amount;
+    private Float finalCost;
 }
