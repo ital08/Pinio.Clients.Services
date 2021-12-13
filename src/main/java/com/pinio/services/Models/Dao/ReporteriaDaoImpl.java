@@ -106,7 +106,9 @@ public class ReporteriaDaoImpl implements ReporteriaDao{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
-            r = rs.getInt("Count");
+            while (rs.next()) {
+                r = rs.getInt("Count");
+            }
             ps.close();
             rs.close();
             con.close();
@@ -124,7 +126,9 @@ public class ReporteriaDaoImpl implements ReporteriaDao{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
             r = rs.getInt("Count");
+            }
             ps.close();
             rs.close();
             con.close();
