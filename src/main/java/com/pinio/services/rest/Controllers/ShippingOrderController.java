@@ -4,10 +4,12 @@ import com.pinio.services.Models.Entity.SearchProductCatalog;
 import com.pinio.services.Models.Entity.ShippingDtaEmp;
 import com.pinio.services.Service.ShippingOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
+@RequestMapping("/shipping")
 public class ShippingOrderController {
     @Autowired
     private ShippingOrderService service;

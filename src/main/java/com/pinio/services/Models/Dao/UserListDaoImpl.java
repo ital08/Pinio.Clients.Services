@@ -82,7 +82,7 @@ public class UserListDaoImpl implements UserListDao{
         r.setListUsers(new ArrayList<User>());
         String SQL = "SELECT * \n " +
                 "   FROM ClientDta \n " +
-                "   WHERE upper(ClientDta.name LIKE %?%) \n " +
+                "   WHERE upper(ClientDta.name) LIKE upper('%?%')  \n " +
                 "   ORDER BY IdClient \n " +
                 "   LIMIT 10 \n  " +
                 "OFFSET ((? - 1)*10);   ";

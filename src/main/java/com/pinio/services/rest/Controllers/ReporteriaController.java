@@ -4,10 +4,12 @@ import com.pinio.services.Models.Entity.SearchSelsReg;
 import com.pinio.services.Models.Entity.SelsReg;
 import com.pinio.services.Service.ReporteriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
+@RequestMapping("/reportery")
 public class ReporteriaController {
     @Autowired
     private ReporteriaService service;

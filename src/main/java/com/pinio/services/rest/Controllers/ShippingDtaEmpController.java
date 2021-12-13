@@ -4,16 +4,17 @@ import com.pinio.services.Models.Entity.SearchShippingDtaEmp;
 import com.pinio.services.Models.Entity.ShippingDtaEmp;
 import com.pinio.services.Service.ShippingDtaEmpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
-
+@RequestMapping("/shipping")
 public class ShippingDtaEmpController {
     @Autowired
     private ShippingDtaEmpService service;
     @RequestMapping(
-            value = "/ShippingDtaEmp",
+            value = "/shippingdtaemp",
             produces = "application/json;charset=utf-8",
             method = RequestMethod.GET
     )

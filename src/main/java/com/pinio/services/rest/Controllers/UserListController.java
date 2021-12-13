@@ -4,11 +4,12 @@ import com.pinio.services.Models.Entity.SearchUsers;
 import com.pinio.services.Models.Entity.User;
 import com.pinio.services.Service.UserListService;
 import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
-
+@RequestMapping("/userlist")
 public class UserListController {
     @Autowired
     private UserListService service;

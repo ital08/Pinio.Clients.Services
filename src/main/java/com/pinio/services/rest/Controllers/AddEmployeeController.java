@@ -4,9 +4,11 @@ import com.pinio.services.Models.Entity.Employees;
 import com.pinio.services.Service.AddEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
+@RequestMapping("/employee")
 public class AddEmployeeController {
     @Autowired
     private AddEmployeeService service;
