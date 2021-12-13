@@ -23,16 +23,35 @@ public class ProductCatalogDaoImpl implements ProductCatalogDao{
                 "                u.urlimage AS urlimage \n" +
                 "                FROM productcatalog as p \n" +
                 "                INNER JOIN imagescatalog as u on u.idproductcatalog = p.idproductcatalog \n" +
-                "                WHERE (upper(p.productmodel) like ?) AND  ( upper(p.productbrand) like ?) AND (upper(p.idproductcatalog) like ?)\n "+
-                "                ORDER BY unitprice ?;               "
-                ;
+                "                WHERE (upper(p.productmodel) like ?) AND  ( upper(p.productbrand) like ?) AND (upper(p.idproductcatalog) like ?) \n "+
+                "                ORDER BY unitprice asc               "                 ;
+        if(orden.toUpperCase()=="DESC"){
+            SQL = "SELECT p.idproductcatalog AS idproductcatalog, \n" +
+                    "                p.productbrand AS productbrand, \n" +
+                    "                p.productmodel AS productmodel, \n" +
+                    "                p.unitprice AS unitprice, \n" +
+                    "                u.urlimage AS urlimage \n" +
+                    "                FROM productcatalog as p \n" +
+                    "                INNER JOIN imagescatalog as u on u.idproductcatalog = p.idproductcatalog \n" +
+                    "                WHERE (upper(p.productmodel) like ?) AND  ( upper(p.productbrand) like ?) AND (upper(p.idproductcatalog) like ?) \n "+
+                    "                ORDER BY unitprice desc               "                 ;
+        }else if(orden.toUpperCase()==""){
+            SQL = "SELECT p.idproductcatalog AS idproductcatalog, \n" +
+                    "                p.productbrand AS productbrand, \n" +
+                    "                p.productmodel AS productmodel, \n" +
+                    "                p.unitprice AS unitprice, \n" +
+                    "                u.urlimage AS urlimage \n" +
+                    "                FROM productcatalog as p \n" +
+                    "                INNER JOIN imagescatalog as u on u.idproductcatalog = p.idproductcatalog \n" +
+                    "                WHERE (upper(p.productmodel) like ?) AND  ( upper(p.productbrand) like ?) AND (upper(p.idproductcatalog) like ?) \n "+
+                    "                ORDER BY productmodel asc               "                 ;
+        }
         try {
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1,"%"+productcatalog.getProductModel().toUpperCase()+"%");
-            ps.setString(2,"%"+productcatalog.getProductBrand().toUpperCase()+"%");
-            ps.setString(3,"%"+productcatalog.getIdProductCatalog().toUpperCase()+"%");
-            ps.setString(4,orden);
+            ps.setString(1,productcatalog.getProductModel().toUpperCase()+"%");
+            ps.setString(2,productcatalog.getProductBrand().toUpperCase()+"%");
+            ps.setString(3,productcatalog.getIdProductCatalog().toUpperCase()+"%");
 
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
