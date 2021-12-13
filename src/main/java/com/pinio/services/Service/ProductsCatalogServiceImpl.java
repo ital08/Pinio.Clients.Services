@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductsCatalogServiceImpl implements ProductsCatalogService {
     @Autowired
     private ProductCatalogDao dao;
-    public SearchProductCatalog getProductCatalog (ProductCatalog productcatalog){
-        return dao.getProductCatalog(productcatalog);
+    public SearchProductCatalog getProductCatalog (ProductCatalog productcatalog,String orden){
+        return dao.getProductCatalog(productcatalog,orden);
     }
 
 }

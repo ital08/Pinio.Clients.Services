@@ -29,7 +29,7 @@ public class ProductsController {
             produces = "application/json;charset=utf-8",
             method = RequestMethod.GET
     )
-    public @ResponseBody SearchProductCatalog getProductCatalog (@RequestBody ProductCatalog productocatalog){
-        return service.getProductCatalog(productocatalog);
+    public @ResponseBody SearchProductCatalog getProductCatalog (@RequestBody ProductCatalog productocatalog,String orden){
+        return service.getProductCatalog(productocatalog,orden);
     }
 }
