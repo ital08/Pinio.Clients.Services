@@ -200,8 +200,9 @@ public class ReporteriaDaoImpl implements ReporteriaDao{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
+            while (rs.next()){
                 r.setAmount(rs.getFloat("Sum"));
-                r.setVentas(rs.getInt("Count"));
+                r.setVentas(rs.getInt("Count"));}
             ps.close();
             rs.close();
             con.close();
