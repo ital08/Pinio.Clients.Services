@@ -83,14 +83,14 @@ public class EmployeesListDaoImpl implements EmployeesListDao{
         r.setListEmployees(new ArrayList<Employees>());
         String SQL = "SELECT * \n " +
                 "   FROM EmplDta \n " +
-                "   WHERE upper(EmplDta.name) LIKE upper('%?%')\n" +
+                "   WHERE upper(EmplDta.name) LIKE ?\n" +
                 "   ORDER BY IdEmployee\n" +
                 "   LIMIT 10 \n" +
                 "   OFFSET ((?-1)*10);";
         try {
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1,employees.getIdemployee());
+            ps.setString(1,"%"+employees.getName().toUpperCase()+"%");
             ps.setInt(2,integer);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){

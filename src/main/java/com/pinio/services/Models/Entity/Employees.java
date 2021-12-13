@@ -2,6 +2,8 @@ package com.pinio.services.Models.Entity;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 @Data
 public class Employees {
     private Integer idemployee;

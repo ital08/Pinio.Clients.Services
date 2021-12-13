@@ -15,8 +15,8 @@ public class User {
 //    clientregistrydate TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 //    PRIMARY KEY (idclient)
 //);nameDistrict, P.nameprovincia, F.nameDepartment
-    private String idclient;
-    private String DNI;
+    private Integer idclient;
+    private Integer DNI;
     private String Clientname;
     private String ClientLastname;
     private String clientname;

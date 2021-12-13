@@ -40,7 +40,7 @@ public class HistoryDaoImpl implements HistoryDao{
         try {
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1,user.getIdclient());
+            ps.setInt(1,user.getIdclient());
 
             ResultSet rs = ps.executeQuery();
             while(rs.next()){

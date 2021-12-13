@@ -28,13 +28,14 @@ public class ShippingOrderDaoImpl implements ShippingOrderDao{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1,shippingDtaEmp.getIdshippingorder());
-
             ResultSet rs = ps.executeQuery();
+            while(rs.next()){
                 r.setIdshippingorder(rs.getInt("idshippingorder"));
                 r.setNamedepartament(rs.getString("namedepartment"));
                 r.setNameprovincia(rs.getString("nameprovincia"));
                 r.setNamedistrict(rs.getString("namedistrict"));
                 r.setNombreEmpleado(rs.getString("nombreEmpleado"));
+            }
             ps.close();
             rs.close();
             con.close();

@@ -38,8 +38,8 @@ public class UserServiceDaoImpl implements UserServiceDao{
             while(rs.next()){
 
                 p.setClientname(rs.getString("clientname"));
-                p.setDNI(rs.getString("dni"));
-                p.setIdclient(rs.getString("idclient"));
+                p.setDNI(rs.getInt("dni"));
+                p.setIdclient(rs.getInt("idclient"));
                 p.setClientpassword(rs.getString("clientpassword"));
                 p.setClientemail(rs.getString("email"));
             }

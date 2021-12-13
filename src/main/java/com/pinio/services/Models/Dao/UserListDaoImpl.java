@@ -28,8 +28,8 @@ public class UserListDaoImpl implements UserListDao{
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 User p = new User();
-                p.setIdclient(rs.getString("idclient"));
-                p.setDNI(rs.getString("dni"));
+                p.setIdclient(rs.getInt("idclient"));
+                p.setDNI(rs.getInt("dni"));
                 p.setClientname(rs.getString("clientname"));
                 p.setClientLastname(rs.getString("clientlastname"));
                 p.setNameDistrict(rs.getString("namedistrict"));
@@ -55,12 +55,12 @@ public class UserListDaoImpl implements UserListDao{
         try {
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1,user.getIdclient());
+            ps.setInt(1,user.getIdclient());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 User p = new User();
-                p.setIdclient(rs.getString("idclient"));
-                p.setDNI(rs.getString("dni"));
+                p.setIdclient(rs.getInt("idclient"));
+                p.setDNI(rs.getInt("dni"));
                 p.setClientname(rs.getString("clientname"));
                 p.setClientLastname(rs.getString("clientlastname"));
                 p.setNameDistrict(rs.getString("namedistrict"));
@@ -82,20 +82,20 @@ public class UserListDaoImpl implements UserListDao{
         r.setListUsers(new ArrayList<User>());
         String SQL = "SELECT * \n " +
                 "   FROM ClientDta \n " +
-                "   WHERE upper(ClientDta.name) LIKE upper('%?%')  \n " +
+                "   WHERE upper(ClientDta.clientname) LIKE ?  \n " +
                 "   ORDER BY IdClient \n " +
                 "   LIMIT 10 \n  " +
                 "OFFSET ((? - 1)*10);   ";
         try {
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1,user.getClientname());
+            ps.setString(1,"%"+user.getClientname().toUpperCase()+"%");
             ps.setInt(2,integer);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 User p = new User();
-                p.setIdclient(rs.getString("idclient"));
-                p.setDNI(rs.getString("dni"));
+                p.setIdclient(rs.getInt("idclient"));
+                p.setDNI(rs.getInt("dni"));
                 p.setClientname(rs.getString("clientname"));
                 p.setClientLastname(rs.getString("clientlastname"));
                 p.setNameDistrict(rs.getString("namedistrict"));
