@@ -47,14 +47,14 @@ public class ShippingDtaEmpDaoImpl implements ShippingDtaEmpDao {
         return r;
     }
 
-    public ShippingDtaEmp chageShippingState(ShippingDtaEmp shippingDtaEmp) {
-        String SQL = "Update shippingorder\n " +
+    public ShippingDtaEmp changeShippingState(ShippingDtaEmp shippingDtaEmp) {
+        String SQL = "Update shippingorder \n " +
                 "      set idshippingstate = ? \n " +
                 "      where idshippingorder = ? ; \n";
         try{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1, shippingDtaEmp.getShippingstatename());
+            ps.setInt(1, shippingDtaEmp.getIdshippingstate());
             ps.setInt(2, shippingDtaEmp.getIdshippingorder());
             ps.executeUpdate();
             ps.close();

@@ -17,7 +17,7 @@ public class ShippingDtaEmpServiceImpl implements ShippingDtaEmpService{
         return dao.getShippingDtaEmp();
     }
 
-    public ShippingDtaEmp chageShippingState(ShippingDtaEmp shippingDtaEmp) {
-        return dao.chageShippingState(shippingDtaEmp);
+    public ShippingDtaEmp changeShippingState(ShippingDtaEmp shippingDtaEmp) {
+        return dao.changeShippingState(shippingDtaEmp);
     }
 }

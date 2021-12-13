@@ -13,4 +13,5 @@ public class ShippingDtaEmp {
     private String nameprovincia;
     private String namedistrict;
     private String shippingstatename;
+    private Integer idshippingstate;
 }

@@ -5,5 +5,5 @@ import com.pinio.services.Models.Entity.ShippingDtaEmp;
 
 public interface ShippingDtaEmpDao {
     public abstract SearchShippingDtaEmp getShippingDtaEmp();
-    public abstract ShippingDtaEmp chageShippingState(ShippingDtaEmp shippingDtaEmp);
+    public abstract ShippingDtaEmp changeShippingState(ShippingDtaEmp shippingDtaEmp);
 }

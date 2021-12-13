@@ -29,7 +29,7 @@ public class ShippingDtaEmpController {
             method = RequestMethod.POST
     )
     public @ResponseBody
-    ShippingDtaEmp chageShippingState (@RequestBody ShippingDtaEmp shippingDtaEmp){
-        return service.chageShippingState(shippingDtaEmp);
+    ShippingDtaEmp changeShippingState (@RequestBody ShippingDtaEmp shippingDtaEmp){
+        return service.changeShippingState(shippingDtaEmp);
     }
 }
