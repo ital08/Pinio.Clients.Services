@@ -31,7 +31,7 @@ public class ReporteriaDaoImpl implements ReporteriaDao{
                 SelsReg p = new SelsReg();
                 p.setAmount(rs.getFloat("Sum"));
                 p.setVentas(rs.getInt("Count"));
-                p.setNamedistrict(rs.getNString("nameDistrict"));
+                p.setNamedistrict(rs.getString("nameDistrict"));
                 r.getListSelsReg().add(p);
             }
             ps.close();
