@@ -15,8 +15,8 @@ public class AddEmployeeDaoImpl implements AddEmployeeDao{
     private JdbcTemplate jdbcTemplate;
 
     public Employees addNewEmployee(Employees employees) {
-        String SQL = "INSERT INTO Employees (Name, LastName, password, EmailEmployee,idJob,idemployee) \n " +
-                "values (?,?,?,?,?,?); \n ";
+        String SQL = "INSERT INTO Employees (Name, LastName, password, EmailEmployee,idJob,idemployee, createddate) \n " +
+                "values (?,?,?,?,?,?,Now()); \n ";
         try{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);

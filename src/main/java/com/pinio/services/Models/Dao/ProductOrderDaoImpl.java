@@ -15,8 +15,8 @@ public class ProductOrderDaoImpl implements ProductOrderDao{
     private JdbcTemplate jdbcTemplate;
     public ProductOrder addProductOrder(ProductOrder productorder) {
         String SQL = "Insert into productorder\n" +
-                " (idproductorder, idproductcatalog, idemployee, totalcost, nameEmpresa, rucEmpresa, cantLot)\n" +
-                "values (?,?,?,?,?,?,?);\n";
+                " (idproductorder, idproductcatalog, idemployee, totalcost, nameEmpresa, rucEmpresa, cantLot, productorderdate)\n" +
+                "values (?,?,?,?,?,?,?,Now());\n";
         try{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);

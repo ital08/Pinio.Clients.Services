@@ -32,8 +32,8 @@ public class NewProductDaoImpl implements NewProductDao {
 
         String SQL1 = "INSERT into productcatalog \n" +
                 "   (idproductcatalog, idsubcategory, productbrand, productmodel, productdescription, \n" +
-                "   provider, unitprice, unitsxlot, shippingcost) \n" +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?); \n";
+                "   provider, unitprice, unitsxlot, shippingcost, launchdate) \n" +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, Now()); \n";
         try{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL1);

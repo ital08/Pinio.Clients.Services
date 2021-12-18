@@ -15,8 +15,8 @@ public class ProductLotDaoImpl implements ProductLotDao{
     private JdbcTemplate jdbcTemplate;
 
     public ProductLot addProductLot(ProductLot productLot) {
-        String SQL = "Insert into productslot (idproductslot, idproductinventory, productamount) \n" +
-                "values (?,?,?); \n";
+        String SQL = "Insert into productslot (idproductslot, idproductinventory, productamount, productslotdate ) \n" +
+                "values (?,?,?,Now()); \n";
         try{
             Connection con = jdbcTemplate.getDataSource().getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
