@@ -31,7 +31,7 @@ public class UserListDaoImpl implements UserListDao{
                 p.setIdclient(rs.getInt("idclient"));
                 p.setDNI(rs.getInt("dni"));
                 p.setClientname(rs.getString("clientname"));
-                p.setClientLastname(rs.getString("clientlastname"));
+                p.setClientlastname(rs.getString("clientlastname"));
                 p.setNameDistrict(rs.getString("namedistrict"));
                 p.setClientemail(rs.getString("email"));
                 r.getListUsers().add(p);
@@ -62,7 +62,7 @@ public class UserListDaoImpl implements UserListDao{
                 p.setIdclient(rs.getInt("idclient"));
                 p.setDNI(rs.getInt("dni"));
                 p.setClientname(rs.getString("clientname"));
-                p.setClientLastname(rs.getString("clientlastname"));
+                p.setClientlastname(rs.getString("clientlastname"));
                 p.setNameDistrict(rs.getString("namedistrict"));
                 p.setClientemail(rs.getString("email"));
                 r.getListUsers().add(p);
@@ -97,7 +97,7 @@ public class UserListDaoImpl implements UserListDao{
                 p.setIdclient(rs.getInt("idclient"));
                 p.setDNI(rs.getInt("dni"));
                 p.setClientname(rs.getString("clientname"));
-                p.setClientLastname(rs.getString("clientlastname"));
+                p.setClientlastname(rs.getString("clientlastname"));
                 p.setNameDistrict(rs.getString("namedistrict"));
                 p.setClientemail(rs.getString("email"));
                 r.getListUsers().add(p);

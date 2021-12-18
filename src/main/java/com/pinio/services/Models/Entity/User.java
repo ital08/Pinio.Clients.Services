@@ -2,6 +2,9 @@ package com.pinio.services.Models.Entity;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 @Data
 public class User {
     //    CREATE TABLE client (
@@ -17,12 +20,13 @@ public class User {
 //);nameDistrict, P.nameprovincia, F.nameDepartment
     private Integer idclient;
     private Integer DNI;
-    private String Clientname;
-    private String ClientLastname;
     private String clientname;
+    private String clientlastname;
     private String clientemail;
     private String clientpassword;
+    private Integer emailadress;
     private String nameDistrict;
     private String nameprovincia;
     private String nameDepartment;
+    private Timestamp clientregistrydate;
 }

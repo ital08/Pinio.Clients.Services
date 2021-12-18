@@ -10,5 +10,6 @@ public class Category {
 //            name varchar(50) NOT NULL,
 //    PRIMARY KEY (idcategory)
 //);
-
+    private Integer idcategory;
+    private String name;
 }

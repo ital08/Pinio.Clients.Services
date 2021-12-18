@@ -2,8 +2,12 @@ package com.pinio.services.Service;
 
 import com.pinio.services.Models.Entity.ProductCatalog;
 import com.pinio.services.Models.Entity.SearchProductCatalog;
+import com.pinio.services.Models.Entity.Subcategory;
 
 public interface ProductsCatalogService {
     //Traer el catalogo de productos
-    public abstract SearchProductCatalog getProductCatalog(ProductCatalog productocatalog,String orden);
+    public abstract SearchProductCatalog getProductCatalog(ProductCatalog productCatalog,String orden,Integer pagNum,Integer pagSize);
+    public abstract SearchProductCatalog getProductCatalogSub(Subcategory subcategory, String orden, Integer pagNum, Integer pagSize);
+    public abstract SearchProductCatalog getProductCatalogPrice(String orden, Integer pagNum, Integer pagSize,Integer min,Integer max);
+    public abstract SearchProductCatalog getProductCatalogBrand(ProductCatalog productCatalog, String orden, Integer pagNum, Integer pagSize);
 }
