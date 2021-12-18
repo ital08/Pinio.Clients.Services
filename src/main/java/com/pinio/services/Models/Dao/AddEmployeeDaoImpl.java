@@ -28,7 +28,6 @@ public class AddEmployeeDaoImpl implements AddEmployeeDao{
             ps.setInt(6, employees.getIdemployee());
             ps.executeUpdate();
             ps.close();
-            con.commit();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();

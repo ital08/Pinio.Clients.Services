@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class EmployeesListDaoImpl implements EmployeesListDao{
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
     public SearchEmployees getEmployees(Integer integer) {
         SearchEmployees r = new SearchEmployees();
         r.setListEmployees(new ArrayList<Employees>());
@@ -124,7 +123,6 @@ public class EmployeesListDaoImpl implements EmployeesListDao{
             ps.setInt(2, employees.getIdemployee());
             ps.executeUpdate();
             ps.close();
-            con.commit();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();

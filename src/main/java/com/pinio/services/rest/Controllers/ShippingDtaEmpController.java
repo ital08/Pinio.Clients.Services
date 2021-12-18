@@ -4,7 +4,6 @@ import com.pinio.services.Models.Entity.SearchShippingDtaEmp;
 import com.pinio.services.Models.Entity.ShippingDtaEmp;
 import com.pinio.services.Service.ShippingDtaEmpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,7 +23,7 @@ public class ShippingDtaEmpController {
     }
 
     @RequestMapping(
-            value = "/ChangeShippingStte",
+            value = "/changeshippingstate",
             produces = "application/json;charset=utf-8",
             method = RequestMethod.POST
     )

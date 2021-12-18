@@ -29,7 +29,6 @@ public class ProductOrderDaoImpl implements ProductOrderDao{
             ps.setInt(7, productorder.getCantlot());
             ps.executeUpdate();
             ps.close();
-            con.commit();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -10,6 +10,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
 @CrossOrigin(origins = "*",methods = {RequestMethod.POST,RequestMethod.GET})
-@RequestMapping("/products")
+@RequestMapping("/employeeslist")
 public class EmployeesListController {
     @Autowired
     private EmployeesListService service;
@@ -51,12 +53,12 @@ public class EmployeesListController {
         return service.getEmployees(employees, integer);
     }
     @RequestMapping(
-            value = "/changeEmployeeRol",
+            value = "/changeemployeerol",
             produces = "application/json;charset=utf-8",
             method = RequestMethod.POST
     )
     public @ResponseBody
-    Employees changeEmployeeRol(@RequestBody Employees employees){
+    Employees changeEmployeeRol(@org.springframework.web.bind.annotation.RequestBody Employees employees){
         return service.changeEmployeeRol(employees);
     }
 }

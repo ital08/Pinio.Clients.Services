@@ -28,7 +28,6 @@ public class NewProductDaoImpl implements NewProductDao {
             ps.setFloat(8, productcatalog.getShippingcost());
             ps.executeUpdate();
             ps.close();
-            con.commit();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();

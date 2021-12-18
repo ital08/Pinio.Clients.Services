@@ -25,7 +25,6 @@ public class ProductLotDaoImpl implements ProductLotDao{
             ps.setInt(3, productLot.getProductamount());
             ps.executeUpdate();
             ps.close();
-            con.commit();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();

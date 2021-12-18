@@ -58,7 +58,6 @@ public class ShippingDtaEmpDaoImpl implements ShippingDtaEmpDao {
             ps.setInt(2, shippingDtaEmp.getIdshippingorder());
             ps.executeUpdate();
             ps.close();
-            con.commit();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class ProductLotController {
             method = RequestMethod.POST
     )
     public @ResponseBody
-    ProductLot addProductLot (@RequestBody ProductLot productLot){
+    ProductLot addProductLot (ProductLot productLot){
         return service.addProductLot(productLot);
     }
 }
