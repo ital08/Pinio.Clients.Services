@@ -3,7 +3,6 @@ package com.pinio.services.rest.Controllers;
 import com.pinio.services.Models.Entity.ProductLot;
 import com.pinio.services.Service.ProductLotService;
 import org.springframework.beans.factory.annotation.Autowired;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,7 +17,7 @@ public class ProductLotController {
             method = RequestMethod.POST
     )
     public @ResponseBody
-    ProductLot addProductLot (ProductLot productLot){
+    ProductLot addProductLot (@RequestBody ProductLot productLot){
         return service.addProductLot(productLot);
     }
 }
